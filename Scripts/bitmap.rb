@@ -20,7 +20,7 @@ class Bitmap
       filename = width
       filepath = RGSS.get_file(filename)
       Log.debug('load bitmap') { filepath }
-      SDL::Surface.load(filepath).display_format_alpha
+      SF::Surface.load(filepath).display_format_alpha
     else
       big_endian = ([1].pack("N") == [1].pack("L"))
       if big_endian
@@ -34,7 +34,7 @@ class Bitmap
         bmask = 0x00ff0000
         amask = 0xff000000
       end
-      SDL::Surface.new(SDL::SWSURFACE|SDL::SRCALPHA, width, height, 32, rmask, gmask, bmask, amask)
+      SF::Surface.new(SF::SWSURFACE|SF::SRCALPHA, width, height, 32, rmask, gmask, bmask, amask)
     end
     @font   = Font.new
     # @text = [] ~
@@ -82,9 +82,9 @@ class Bitmap
   # opacity can be set from 0 to 255.
 
   def blt(x, y, src_bitmap, src_rect, opacity=255)
-    src_bitmap.entity.set_alpha(SDL::RLEACCEL, opacity)
-    SDL::Surface.blit(src_bitmap.entity, src_rect.x, src_rect.y, src_rect.width, src_rect.height, @entity, x, y)
-    src_bitmap.entity.set_alpha(SDL::SRCALPHA|SDL::RLEACCEL, 255)
+    src_bitmap.entity.set_alpha(SF::RLEACCEL, opacity)
+    SF::Surface.blit(src_bitmap.entity, src_rect.x, src_rect.y, src_rect.width, src_rect.height, @entity, x, y)
+    src_bitmap.entity.set_alpha(SF::SRCALPHA|SF::RLEACCEL, 255)
   end
 
   # Performs a block transfer from the src_bitmap box src_rect (Rect) to the specified bitmap box dest_rect (Rect).
@@ -92,9 +92,9 @@ class Bitmap
   # opacity can be set from 0 to 255.
 
   def stretch_blt(dest_rect, src_bitmap, src_rect, opacity=255)
-    src_bitmap.entity.set_alpha(SDL::RLEACCEL, opacity)
-    SDL::Surface.transform_blit(src_bitmap.entity, @entity, 0, src_rect.width.to_f / dest_rect.width, src_rect.height.to_f / dest_rect.height, src_rect.x, src_rect.y, dest_rect.x, dest_rect.y, SDL::Surface::TRANSFORM_AA)
-    src_bitmap.entity.set_alpha(SDL::SRCALPHA|SDL::RLEACCEL, 255)
+    src_bitmap.entity.set_alpha(SF::RLEACCEL, opacity)
+    SF::Surface.transform_blit(src_bitmap.entity, @entity, 0, src_rect.width.to_f / dest_rect.width, src_rect.height.to_f / dest_rect.height, src_rect.x, src_rect.y, dest_rect.x, dest_rect.y, SF::Surface::TRANSFORM_AA)
+    src_bitmap.entity.set_alpha(SF::SRCALPHA|SF::RLEACCEL, 255)
   end
 
   # :call-seq:
@@ -242,9 +242,9 @@ class Bitmap
 
     # @text << [str, x, y, @font.color.red, @font.color.green, @font.color.blue] See you ~
     tmp = @font.entity.render_blended_utf8(str,  @font.color.red, @font.color.green, @font.color.blue)
-    tmp.set_alpha(SDL::RLEACCEL ,0)
+    tmp.set_alpha(SF::RLEACCEL ,0)
     @entity.put tmp,x,y
-    #SDL::Surface.transformBlit tmp,@entity,0,1,1,0,0,x, y,SDL::Surface::TRANSFORM_AA|SDL::Surface::TRANSFORM_SAFE|SDL::Surface::TRANSFORM_SAFE
+    #SF::Surface.transformBlit tmp,@entity,0,1,1,0,0,x, y,SF::Surface::TRANSFORM_AA|SF::Surface::TRANSFORM_SAFE|SF::Surface::TRANSFORM_SAFE
   end
 
   # Gets the box (Rect) used when drawing the string str with the draw_text method. Does not include the outline portion (RGSS3) and the angled portions of italicized text.
