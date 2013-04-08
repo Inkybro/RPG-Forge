@@ -1,5 +1,7 @@
 ﻿require 'sdl'
 require 'logger'
+require_relative './rgss/error'
+require_relative './rgss/reset'
 
 # The following built-in functions are defined in RGSS.
 
@@ -119,7 +121,7 @@ module RGSS
 
   # Loads the data file indicated by filename and restores the object.
   #
-  #  $data_actors = load_data("Data/Actors.rvdata2")
+  #  $data_actors = load_data("./data/Actors.rvdata2")
   #
   # This function is essentially the same as:
   #
@@ -137,7 +139,7 @@ module RGSS
 
   # Saves the object obj to the data file indicated by filename.
   #
-  #  save_data($data_actors, "Data/Actors.rvdata2")
+  #  save_data($data_actors, "./data/Actors.rvdata2")
   #
   # This function is the same as:
   #  File.open(filename, "wb") { |f|

@@ -15,19 +15,19 @@ class Scene_Title
       return
     end
     # Load database
-    $data_actors        = load_data("Data/Actors.rxdata")
-    $data_classes       = load_data("Data/Classes.rxdata")
-    $data_skills        = load_data("Data/Skills.rxdata")
-    $data_items         = load_data("Data/Items.rxdata")
-    $data_weapons       = load_data("Data/Weapons.rxdata")
-    $data_armors        = load_data("Data/Armors.rxdata")
-    $data_enemies       = load_data("Data/Enemies.rxdata")
-    $data_troops        = load_data("Data/Troops.rxdata")
-    $data_states        = load_data("Data/States.rxdata")
-    $data_animations    = load_data("Data/Animations.rxdata")
-    $data_tilesets      = load_data("Data/Tilesets.rxdata")
-    $data_common_events = load_data("Data/CommonEvents.rxdata")
-    $data_system        = load_data("Data/System.rxdata")
+    $data_actors        = load_data("./data/Actors.rxdata")
+    $data_classes       = load_data("./data/Classes.rxdata")
+    $data_skills        = load_data("./data/Skills.rxdata")
+    $data_items         = load_data("./data/Items.rxdata")
+    $data_weapons       = load_data("./data/Weapons.rxdata")
+    $data_armors        = load_data("./data/Armors.rxdata")
+    $data_enemies       = load_data("./data/Enemies.rxdata")
+    $data_troops        = load_data("./data/Troops.rxdata")
+    $data_states        = load_data("./data/States.rxdata")
+    $data_animations    = load_data("./data/Animations.rxdata")
+    $data_tilesets      = load_data("./data/Tilesets.rxdata")
+    $data_common_events = load_data("./data/CommonEvents.rxdata")
+    $data_system        = load_data("./data/System.rxdata")
     # Make system object
     $game_system = Game_System.new
     # Make title graphic
@@ -174,19 +174,19 @@ class Scene_Title
   #--------------------------------------------------------------------------
   def battle_test
     # Load database (for battle test)
-    $data_actors        = load_data("Data/BT_Actors.rxdata")
-    $data_classes       = load_data("Data/BT_Classes.rxdata")
-    $data_skills        = load_data("Data/BT_Skills.rxdata")
-    $data_items         = load_data("Data/BT_Items.rxdata")
-    $data_weapons       = load_data("Data/BT_Weapons.rxdata")
-    $data_armors        = load_data("Data/BT_Armors.rxdata")
-    $data_enemies       = load_data("Data/BT_Enemies.rxdata")
-    $data_troops        = load_data("Data/BT_Troops.rxdata")
-    $data_states        = load_data("Data/BT_States.rxdata")
-    $data_animations    = load_data("Data/BT_Animations.rxdata")
-    $data_tilesets      = load_data("Data/BT_Tilesets.rxdata")
-    $data_common_events = load_data("Data/BT_CommonEvents.rxdata")
-    $data_system        = load_data("Data/BT_System.rxdata")
+    $data_actors        = load_data("./data/BT_Actors.rxdata")
+    $data_classes       = load_data("./data/BT_Classes.rxdata")
+    $data_skills        = load_data("./data/BT_Skills.rxdata")
+    $data_items         = load_data("./data/BT_Items.rxdata")
+    $data_weapons       = load_data("./data/BT_Weapons.rxdata")
+    $data_armors        = load_data("./data/BT_Armors.rxdata")
+    $data_enemies       = load_data("./data/BT_Enemies.rxdata")
+    $data_troops        = load_data("./data/BT_Troops.rxdata")
+    $data_states        = load_data("./data/BT_States.rxdata")
+    $data_animations    = load_data("./data/BT_Animations.rxdata")
+    $data_tilesets      = load_data("./data/BT_Tilesets.rxdata")
+    $data_common_events = load_data("./data/BT_CommonEvents.rxdata")
+    $data_system        = load_data("./data/BT_System.rxdata")
     # Reset frame count for measuring play time
     Graphics.frame_count = 0
     # Make each game object
