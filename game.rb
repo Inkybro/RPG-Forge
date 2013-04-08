@@ -2,6 +2,9 @@ require				'rubygems'
 require       'bundler'
 Bundler.require(:default)
 
+require 'sdl'
+require 'logger'
+
 #require_relative './lib/rgss'
 require_relative './lib/bitmap'
 require_relative './lib/color'
