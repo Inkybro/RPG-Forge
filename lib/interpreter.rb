@@ -1,0 +1,7 @@
+require_relative './interpreters/interpreter_1'
+require_relative './interpreters/interpreter_2'
+require_relative './interpreters/interpreter_3'
+require_relative './interpreters/interpreter_4'
+require_relative './interpreters/interpreter_5'
+require_relative './interpreters/interpreter_6'
+require_relative './interpreters/interpreter_7'

@@ -1,8 +1,6 @@
 # The bitmap class. Bitmaps represent images.
 #
 # Sprites (Sprite) and other objects must be used to display bitmaps onscreen.
-require 'rubygems'
-gem 'rubysdl'
 
 class Bitmap
   attr_accessor :font, :entity, :text
